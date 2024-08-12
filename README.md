@@ -7,6 +7,8 @@ pip install -r pip_requirements.txt
 # Usage
 Create app in both developers.spotify.com and Google Cloud Console 
 you only need to change the the CLIENT_ID and CLIENT_SECRET for both Spotify and YouTube.
+You`ll need to allow the redirect URI on Spotify for http://localhost:5000/callback
+and on YouTube to allow redirect URI for http://localhost:5000/youtube_callback
 
 Create `.env` file 
 
