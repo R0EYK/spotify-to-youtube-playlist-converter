@@ -33,6 +33,9 @@ YOUTUBE_AUTH_URL = os.getenv('YOUTUBE_AUTH_URL')
 YOUTUBE_TOKEN_URL = os.getenv('YOUTUBE_TOKEN_URL')
 YOUTUBE_SCOPES = os.getenv('YOUTUBE_SCOPES')
 
+# Global variable
+MAX_SONGS = 30 # YouTube API have some kind of a limit and I dont want to test it
+
 class PlaylistSongs:
     def __init__(self, name, author):
         self.name = name
@@ -295,6 +298,8 @@ def convert_playlist(playlist_id):
     # Fetch the playlist tracks
     tracks_response = requests.get(f"{API_BASE_URL}playlists/{playlist_id}/tracks", headers=headers)
     tracks = tracks_response.json().get('items', [])
+    tracks = tracks[:MAX_SONGS] # Trimming tracks to a certain amount to avoid passing YouTube API limits
+
 
     # Create a YouTube playlist with the correct title
     youtube_playlist_id = create_youtube_playlist(f"Converted from Spotify: {playlist_name}", "Playlist converted from Spotify")
