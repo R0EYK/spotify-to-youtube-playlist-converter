@@ -9,7 +9,7 @@ Create app in both developers.spotify.com and Google Cloud Console
 you only need to change the the CLIENT_ID and CLIENT_SECRET for both Spotify and YouTube.
 Create `.env` file 
 
-`# Spotify API Credentials
+```# Spotify API Credentials
 CLIENT_ID=''
 CLIENT_SECRET=''
 REDIRECT_URI=http://localhost:5000/callback
@@ -24,6 +24,6 @@ YOUTUBE_CLIENT_SECRET=''
 YOUTUBE_REDIRECT_URI=http://localhost:5000/youtube_callback
 YOUTUBE_AUTH_URL=https://accounts.google.com/o/oauth2/auth
 YOUTUBE_TOKEN_URL=https://oauth2.googleapis.com/token
-YOUTUBE_SCOPES=https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl`
+YOUTUBE_SCOPES=https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl
 
 
